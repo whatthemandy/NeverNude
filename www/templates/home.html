@@ -1,30 +1,17 @@
-<ion-view class='register-container'>
-  <ion-content class= "login">
-    <div class="shadow-div"></div>
-    <div class='logo'>
-        <h1 class="logo-text"><strong>Never</strong> Nude</h1>
-    </div>
-    <div class="slogan">
-        <p class="slogan-text">There Are Dozens of Us</p>
-    </div>
-        <div class="register-page">
-            <div class="register-header">
-                <div class="register-title">
-                    <p>SIGN IN</p>
-                </div>
-                <div class="arrow-button"></div>
-            </div>
-            <div class="register-form-container">
-                <form id="register-form" method="" action="">
+<ion-header-bar class='bar-dark'></ion-header-bar>
+<ion-content class='has-footer'>
 
-                    <input id="nickname" class="register-form-fields" type="text" name="" value="" placeholder="Nickname" >
-                    <input id="first-name" class="register-form-fields" type="text" name="" value="" placeholder="First Name" >
-                    <input id="last-name" class="register-form-fields" type="text" name="" value="" placeholder="Last Name" >
-                    <input id="e-mail" class="register-form-fields" type="text" name="" value="" placeholder="Email" >
-                    <input id="new-password" class="register-form-fields" type="password" name="" value="" placeholder="Password" >
-                    <input id="registerbtn" class="form-button" type="submit" value="REGISTER">
-                </form>
-            </div>
-        </div>
-  </ion-content>
-</ion-view>
+<div class="test" ng-controller="TestsController">
+	<div class='photo-container'>
+		<ion-slide-box>
+			<ion-slide ng-repeat="picture in pictures">
+				<img class='photos' ng-src="{{picture.cover}}">
+			</ion-slide>	
+		</ion-slide-box>
+	</div>
+</div>
+	
+<ion-spinner icon="ripple"></ion-spinner>
+	
+</ion-content>
+<ion-footer-bar class='bar-dark'></ion-footer-bar>
