@@ -227,3 +227,27 @@ input[type="password"] {
     width: 24px;
     height: 24px;
 }
+
+ion-spinner svg {
+    position: absolute;
+    top: 152px;
+    left: 144px;
+}
+
+.slider-pager {
+    display: none;
+}
+
+.photos {
+    height: 150px;
+    width: 100%;
+}
+
+.photo-container {
+    position: absolute;
+    top: 190px;
+    left: 60px;
+    object-fit: cover;
+    background-color: black;
+    width: 200px;
+}
