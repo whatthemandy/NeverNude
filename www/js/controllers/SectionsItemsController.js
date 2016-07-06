@@ -18,4 +18,13 @@ neverNude.controller('SectionsItemsController', ['$scope', 'sectionsitems', func
     $scope.items = data.items;
     $scope.footPictures = data.thumb_image_urls;
   });
+
+  shake.startWatch(onShake, 40);
+
+  var onShake = function () {
+    //testing if it is working
+    alert('Oh yeah, you shook it !');
+    //randomize
+  };
+
 }]);
