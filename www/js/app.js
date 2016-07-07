@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 
 var rootUrl = 'https://nevernude.herokuapp.com'
-var neverNude = angular.module('neverNude', ['ionic', 'ngResource'])
+var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova'])
 
 
 .run(function($ionicPlatform) {
@@ -28,9 +28,9 @@ var neverNude = angular.module('neverNude', ['ionic', 'ngResource'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+    .state('home', {url: '/home', templateUrl: 'templates/home.html'})
+    .state('login', {url: '/login', templateUrl: 'templates/login.html'})//CHANGED TO CAMERA TO TEST FUNCTIONALITY
     // .state('menu', {url: '/menu', abstract:true, templateUrl: 'templates/menu.html', controller: 'MenuController'})
-    .state('home', {url: '/home', templateUrl: 'templates/home.html', controller: 'MenuController'})
-    .state('login', {url: '/login', templateUrl: 'templates/login.html'})
     .state('registration', {url: '/registration', templateUrl: 'templates/registration.html'})
     .state('accessories', {url: '/accessories', templateUrl: 'templates/accessories.html'})
     .state('tops', {url: '/tops', templateUrl: 'templates/tops.html'})

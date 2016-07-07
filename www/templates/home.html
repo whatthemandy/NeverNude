@@ -8,14 +8,14 @@
     <button class="dropdown-menu-button" ng-click="toggleLeft()">
     	<i class="icon ion-navicon"></i>
     </button>
-    
+
 </ion-header-bar>
 <ion-content class='has-footer'>
 <div class="closet-slider-container">
 	<div class="sectionsitems" ng-controller="SectionsItemsController">
-		
+
 		<div class='photo-container accessories'>
-			<ion-slide-box>
+			<ion-slide-box delegate-handle="accer" ng-click="index()">
 				<ion-slide ng-repeat="accerPicture in accerPictures" ng-init="updateSlider()">
 					<img class='photos' ng-src="{{ accerPicture }}">
 				</ion-slide>
@@ -24,9 +24,9 @@
 				<i class="icon ion-android-watch"></i>
 			</a>
 		</div>
-		
+
 		<div class='photo-container tops'>
-			<ion-slide-box>
+			<ion-slide-box delegate-handle="tops">
 				<ion-slide ng-repeat="topsPicture in topsPictures" ng-init="updateSlider()">
 					<img class='photos' ng-src="{{ topsPicture }}">
 				</ion-slide>
@@ -37,7 +37,7 @@
 		</div>
 
 		<div class='photo-container bottoms'>
-			<ion-slide-box>
+			<ion-slide-box delegate-handle="bottoms">
 				<ion-slide ng-repeat="bottomsPicture in bottomsPictures" ng-init="updateSlider()">
 					<img class='photos' ng-src="{{ bottomsPicture }}">
 				</ion-slide>
@@ -48,7 +48,7 @@
 		</div>
 
 		<div class='photo-container footwear'>
-			<ion-slide-box>
+			<ion-slide-box delegate-handle="footwear">
 				<ion-slide ng-repeat="footPicture in footPictures" ng-init="updateSlider()">
 					<img class='photos' ng-src="{{ footPicture }}">
 				</ion-slide>
@@ -57,6 +57,9 @@
 				<img src="img/shoe-icon1.png">
 			</a>
 		</div>
+
+	<button ng-click="saveOutfit()" style="padding:40px;">CLICK </button>
+
 
 	</div>
 </div>
@@ -70,8 +73,7 @@
 		<a class='save-outfit-btn'href="#/outfits">
 			Save Outfit <i class="icon ion-ios-heart-outline"></i>
 		</a>
-			</div>	
-
+	</div>
 </ion-footer-bar>
 
 </ion-side-menu-content>
