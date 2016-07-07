@@ -2,17 +2,17 @@
   <ion-header-bar class="bar-stable">
 
     <!-- items -->
-    <div class="sectionsitems" ng-controller="SectionsItemsController">
-      <h1>bottoms</h1>
+    <!-- <div class="sectionsitems" ng-controller="SectionsItemsController">
+      <h1>accessories</h1>
       <div ng-repeat="picture in pictures">
         <img ng-src="{{ picture }}">
         <p>{{ items[$index].id }}</p>
         <p>{{ items[$index].created_at | date }}</p>
       </div>
     </div>
-
+ -->
     <!-- (all) tags -->
-    <!-- <div class="tags" ng-controller="TagsController">
+   <!--  <div class="tags" ng-controller="TagsController">
       <h1>/tags</h1>
       <div ng-repeat="tag in tags">
         <p>{{ tag.id }}</p>
@@ -22,5 +22,26 @@
 
   </ion-header-bar>
   <ion-content>
+
+    <div class="sectionsitems" ng-controller="SectionsItemsController">
+    
+    <div class='photo-container accessories'>
+      <ion-slide-box>
+        <ion-slide ng-repeat="bottomsPicture in bottomsPictures" ng-init="updateSlider()">
+          <img class='photos' ng-src="{{ bottomsPicture }}">
+        </ion-slide>  
+      </ion-slide-box>
+    </div>
+
+    </div>
+
+    <a class=''href="#/home">
+        <i class="icon ion-android-arrow-dropleft-circle"></i>
+    </a>
+    
+    <a class=''href="#/home">
+        <i class="icon ion-ios-camera"></i>
+    </a>
+
   </ion-content>
 </ion-pane>
