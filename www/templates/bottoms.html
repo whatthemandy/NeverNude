@@ -1,47 +1,53 @@
 <ion-pane>
-  <ion-header-bar class="bar-stable">
+  <ion-header-bar class="bar-dark accessories-header">
 
-    <!-- items -->
-    <!-- <div class="sectionsitems" ng-controller="SectionsItemsController">
-      <h1>accessories</h1>
-      <div ng-repeat="picture in pictures">
-        <img ng-src="{{ picture }}">
-        <p>{{ items[$index].id }}</p>
-        <p>{{ items[$index].created_at | date }}</p>
-      </div>
-    </div>
- -->
-    <!-- (all) tags -->
-   <!--  <div class="tags" ng-controller="TagsController">
-      <h1>/tags</h1>
-      <div ng-repeat="tag in tags">
-        <p>{{ tag.id }}</p>
-        <p>{{ tag.name }}</p>
-      </div>
-    </div> -->
+  <div class="title-container">
+    <h1 class="homepage-title">Bottoms</h1>
+  </div>
+  <button class="dropdown-menu-button" ng-click="doSomething()">
+    <i class="icon ion-navicon"></i>
+  </button>
+
 
   </ion-header-bar>
-  <ion-content>
+  
 
     <div class="sectionsitems" ng-controller="SectionsItemsController">
     
-    <div class='photo-container accessories'>
+    <div class='accessories-photo-container'>
       <ion-slide-box>
-        <ion-slide ng-repeat="bottomsPicture in bottomsPictures" ng-init="updateSlider()">
-          <img class='photos' ng-src="{{ bottomsPicture }}">
+        <ion-slide ng-repeat="bottomsLrgPicture in bottomsLrgPictures" ng-init="updateSlider()">
+          <img class='accessories-photo' ng-src="{{ bottomsLrgPicture }}">
         </ion-slide>  
       </ion-slide-box>
     </div>
 
     </div>
 
-    <a class=''href="#/home">
-        <i class="icon ion-android-arrow-dropleft-circle"></i>
-    </a>
-    
-    <a class=''href="#/home">
-        <i class="icon ion-ios-camera"></i>
-    </a>
+    <!-- (all) tags -->
+    <div class="tag-container">
+      <div class="tags" ng-controller="TagsController">
+        <div ng-repeat="tag in tags">
+          <p>{{ tag.name }}</p>
+        </div>
+      </div>
+    </div>
 
-  </ion-content>
+    
+
 </ion-pane>
+
+<ion-footer-bar class='bar-dark'>
+  <div class="footer-container">
+    <a class='camera-btn-container'href="#/home">
+      <div class='camera-btn'>
+        <i class="icon ion-ios-camera"></i>
+      </div>   
+    </a>
+  </div>  
+
+  <a class='accessories-back-btn'href="#/home">
+    <i class="icon ion-android-arrow-dropleft-circle"></i>
+  </a> 
+
+</ion-footer-bar>
