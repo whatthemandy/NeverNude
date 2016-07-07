@@ -1,0 +1,53 @@
+<ion-pane>
+  <ion-header-bar class="bar-dark accessories-header">
+
+  <div class="title-container">
+    <h1 class="homepage-title">Accessories</h1>
+  </div>
+  <button class="dropdown-menu-button" ng-click="doSomething()">
+    <i class="icon ion-navicon"></i>
+  </button>
+
+
+  </ion-header-bar>
+  
+
+    <div class="sectionsitems" ng-controller="SectionsItemsController">
+    
+    <div class='accessories-photo-container'>
+      <ion-slide-box>
+        <ion-slide ng-repeat="accerLrgPicture in accerLrgPictures" ng-init="updateSlider()">
+          <img class='accessories-photo' ng-src="{{ accerLrgPicture }}">
+        </ion-slide>  
+      </ion-slide-box>
+    </div>
+
+    </div>
+
+    <!-- (all) tags -->
+    <div class="tag-container">
+      <div class="tags" ng-controller="TagsController">
+        <div ng-repeat="tag in tags">
+          <p>{{ tag.name }}</p>
+        </div>
+      </div>
+    </div>
+
+    
+
+</ion-pane>
+
+<ion-footer-bar class='bar-dark'>
+  <div class="footer-container">
+    <a class='camera-btn-container'href="#/home">
+      <div class='camera-btn'>
+        <i class="icon ion-ios-camera"></i>
+      </div>   
+    </a>
+  </div>  
+
+  <a class='accessories-back-btn'href="#/home">
+    <i class="icon ion-android-arrow-dropleft-circle"></i>
+  </a> 
+
+</ion-footer-bar>
