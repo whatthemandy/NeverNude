@@ -282,7 +282,7 @@ h1.homepage-title {
 }
 
 .photos {
-    
+    border-radius: 6px;
     height: 124px;
     width: 100%;
 }
@@ -296,7 +296,8 @@ h1.homepage-title {
     width: 225px;
     /*height: 180px;*/
     height: 130px;
-    /*border-radius: 10px;*/
+    border-radius: 10px;
+    box-shadow: 5px 4px 15px #191919;
 }
 
 .ion-navicon:before {
@@ -309,47 +310,108 @@ h1.homepage-title {
 .ion-tshirt-outline:before {
     font-size: 20px;
     position: absolute;
-    bottom:0px;
-    right:0px;
+    bottom:40px;
+    right:-22px;
     padding: 10px;
-    background-color: red;
+    background-color: black;
     border-radius: 50%;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
+        inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
+        inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
+        inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+        inset 0 -15px 30px rgba(0,0,0,0.3);
 }
 
 .ion-android-watch:before {
     font-size: 20px;
     position: absolute;
-    bottom:0px;
-    right:0px;
+    bottom:40px;
+    right:-22px;
     padding: 10px;
-    background-color: red;
+    background-color: black;
     border-radius: 50%;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
+        inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
+        inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
+        inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+        inset 0 -15px 30px rgba(0,0,0,0.3);
 }
 
 .bottoms-link img{
     width: 45px;
     height: 45px;
     position: absolute;
-    bottom:0px;
-    right:0px;
+    bottom:40px;
+    right:-22px;
     padding: 10px;
-    background-color: red;
+    background-color: black;
     border-radius: 50%;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
+        inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
+        inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
+        inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+        inset 0 -15px 30px rgba(0,0,0,0.3);
 }
 
 .footwear-link img{
     width: 45px;
     height: 45px;
     position: absolute;
-    bottom:0px;
-    right:0px;
+    bottom:40px;
+    right:-22px;
     padding: 10px;
-    background-color: red;
+    background-color: black;
     border-radius: 50%;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
+        inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
+        inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
+        inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+.ion-ios-heart-outline:before {
+    font-size: 20px;
+}
+
+.save-outfit-btn {
+    position: relative;
+    font-size: 20px;
+    padding-top: 12px;
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+    text-shadow: 2px 2px 1px #000;
+    text-decoration: none;
+}
+
+.save-outfit-container a{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 45px;
 }
 
 .accessories {
