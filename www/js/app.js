@@ -30,10 +30,12 @@ var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova']
   $stateProvider
     .state('home', {url: '/home', templateUrl: 'templates/home.html'})
     .state('login', {url: '/login', templateUrl: 'templates/login.html'})//CHANGED TO CAMERA TO TEST FUNCTIONALITY
+    // .state('menu', {url: '/menu', abstract:true, templateUrl: 'templates/menu.html', controller: 'MenuController'})
     .state('registration', {url: '/registration', templateUrl: 'templates/registration.html'})
     .state('accessories', {url: '/accessories', templateUrl: 'templates/accessories.html'})
     .state('tops', {url: '/tops', templateUrl: 'templates/tops.html'})
     .state('bottoms', {url: '/bottoms', templateUrl: 'templates/bottoms.html'})
+    .state('outfits', {url: '/outfits', templateUrl: 'templates/outfits.html'})
     .state('footwear', {url: '/footwear', templateUrl: 'templates/footwear.html'});
   $urlRouterProvider.otherwise('/login');
 });

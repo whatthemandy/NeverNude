@@ -1,9 +1,11 @@
+<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menu-content>
 <ion-header-bar class='bar-dark home-nav-bar'>
 
 	<div class="title-container">
 		<h1 class="homepage-title">Wardrobe</h1>
 	</div>
-    <button class="dropdown-menu-button" ng-click="doSomething()">
+    <button class="dropdown-menu-button" ng-click="toggleLeft()">
     	<i class="icon ion-navicon"></i>
     </button>
 
@@ -41,7 +43,7 @@
 				</ion-slide>
 			</ion-slide-box>
 			<a class='bottoms-link'href="#/bottoms">
-				<img src="img/pants-icon.png">
+				<img src="img/shorts-icon.png">
 			</a>
 		</div>
 
@@ -52,7 +54,7 @@
 				</ion-slide>
 			</ion-slide-box>
 			<a class='footwear-link'href="#/footwear">
-				<img src="img/shoe-icon.png">
+				<img src="img/shoe-icon1.png">
 			</a>
 		</div>
 
@@ -66,9 +68,37 @@
 </ion-content>
 
 <ion-footer-bar class='bar-dark'>
-	<div class="footer-container">
-		<h1 class="save-outfit-btn">Save <i class="icon ion-ios-heart-outline"></i> Outfit</h1>
+	<div class="save-outfit-container">
+		<!-- <h1 class="save-outfit-btn">Save Outfit</h1> -->
+		<a class='save-outfit-btn'href="#/outfits">
+			Save Outfit <i class="icon ion-ios-heart-outline"></i>
+		</a>
 	</div>
-
 </ion-footer-bar>
+
+</ion-side-menu-content>
+
+<ion-side-menu side="left">
+    <ion-header-bar class="bar-dark">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close href="#/outfits">
+          Outfits
+        </ion-item>
+        <ion-item menu-close href="#/home">
+          Profile
+        </ion-item>
+        <ion-item menu-close href="#/home">
+          Filters
+        </ion-item>
+        <ion-item menu-close href="#/home">
+          Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
 
