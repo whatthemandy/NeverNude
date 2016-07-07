@@ -1,5 +1,5 @@
 <ion-pane>
-  <ion-header-bar class="bar-stable">
+  <ion-header-bar class="bar-dark accessories-header">
 
     <!-- items -->
     <!-- <div class="sectionsitems" ng-controller="SectionsItemsController">
@@ -21,14 +21,14 @@
     </div> -->
 
   </ion-header-bar>
-  <ion-content>
+  
 
     <div class="sectionsitems" ng-controller="SectionsItemsController">
     
-    <div class='photo-container accessories'>
+    <div class=''>
       <ion-slide-box>
         <ion-slide ng-repeat="accerPicture in accerPictures" ng-init="updateSlider()">
-          <img class='photos' ng-src="{{ accerPicture }}">
+          <img class='' ng-src="{{ accerPicture }}">
         </ion-slide>  
       </ion-slide-box>
     </div>
@@ -39,9 +39,17 @@
         <i class="icon ion-android-arrow-dropleft-circle"></i>
     </a>
 
-    <a class=''href="#/home">
-        <i class="icon ion-ios-camera"></i>
-    </a>
+    
 
-  </ion-content>
 </ion-pane>
+
+<ion-footer-bar class='bar-dark'>
+  <div class="footer-container">
+    <a class='camera-btn-container'href="#/login">
+      <div class='camera-btn'>
+        <i class="icon ion-ios-camera"></i>
+      </div>   
+    </a>
+  </div>  
+
+</ion-footer-bar>

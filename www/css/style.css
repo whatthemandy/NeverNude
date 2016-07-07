@@ -368,3 +368,35 @@ h1.homepage-title {
     
 }
 
+/*-------------------------------------------------*/
+/*----------------accessories page-----------------*/
+/*-------------------------------------------------*/
+
+.accessories-header {
+    position: absolute;
+    top: 300px;
+    border-bottom: 2px solid #000;
+}
+
+.camera-btn-container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 45px;
+}
+
+.camera-btn {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+.ion-ios-camera:before {
+    color: white;
+    margin-top: 7px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+}
