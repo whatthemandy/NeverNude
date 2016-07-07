@@ -26,12 +26,25 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
     $scope.footPictures = data.med_image_urls;
   });
 
-  shake.startWatch(onShake, 40);
+  sectionsitems.get({ id: 1 }, function(data) {
+    $scope.items = data.items;
+    $scope.accerLrgPictures = data.lrg_image_urls;
+  });
 
-  var onShake = function () {
-    //testing if it is working
-    alert('Oh yeah, you shook it !');
-    //randomize
-  };
+  sectionsitems.get({ id: 2 }, function(data) {
+    $scope.items = data.items;
+    $scope.topsLrgPictures = data.lrg_image_urls;
+  });
+
+  sectionsitems.get({ id: 3 }, function(data) {
+    $scope.items = data.items;
+    $scope.bottomsLrgPictures = data.lrg_image_urls;
+  });
+
+  sectionsitems.get({ id: 4 }, function(data) {
+    $scope.items = data.items;
+    $scope.footLrgPictures = data.lrg_image_urls;
+  });
+
 
 }]);

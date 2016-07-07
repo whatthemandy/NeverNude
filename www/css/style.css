@@ -374,8 +374,10 @@ h1.homepage-title {
 
 .accessories-header {
     position: absolute;
-    top: 300px;
+    top: 280px;
     border-bottom: 2px solid #000;
+    /*border-top: 4px solid #000;*/
+    z-index: 1;
 }
 
 .camera-btn-container {
@@ -397,6 +399,34 @@ h1.homepage-title {
     margin-top: 7px;
     width: 100%;
     text-align: center;
-    text-decoration: none;
     font-size: 32px;
+}
+
+.accessories-photo-container {
+    width: 100%;
+    height: 280px;
+    /*border: 4px solid black;*/
+}
+
+.accessories-photo {
+    width: 100%
+}
+
+.ion-android-arrow-dropleft-circle:before {
+    color: black;
+    font-size: 32px;
+    z-index: 2;
+}
+
+.tag-container {
+    position: absolute;
+    top: 364px;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+}
+
+.tags p {
+    text-align: center;
 }
