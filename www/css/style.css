@@ -535,3 +535,9 @@ h1.homepage-title {
 /*.slider {
     height: 100%;
 }*/
+
+
+.fix {
+    width: 100%;
+    height: 300px;
+}
