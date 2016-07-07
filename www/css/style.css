@@ -272,9 +272,9 @@ h1.homepage-title {
 }
 
 .closet-slider-container {
-    width: 180px;
-    height: 450px;
-    margin-left: -90px;
+    width: 300px;
+    height: 545px;
+    margin-left: -150px;
     top: 3%;
     left: 50%;
     /*background-color: blue;*/
@@ -282,18 +282,21 @@ h1.homepage-title {
 }
 
 .photos {
-    height: 90px;
+    
+    height: 124px;
     width: 100%;
 }
 
 .photo-container {
     border: 3px solid #000;
     position: relative;
-    margin: 10px auto;
+    margin: 5px auto;
     object-fit: cover;
-    width: 175px;
-    height: 96px;
-    border-radius: 5px;
+    /*width: 300px;*/
+    width: 225px;
+    /*height: 180px;*/
+    height: 130px;
+    /*border-radius: 10px;*/
 }
 
 .ion-navicon:before {
@@ -306,9 +309,47 @@ h1.homepage-title {
 .ion-tshirt-outline:before {
     font-size: 20px;
     position: absolute;
-    top:175px;
-    left:140px;
+    bottom:0px;
+    right:0px;
     padding: 10px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.ion-android-watch:before {
+    font-size: 20px;
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    padding: 10px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.bottoms-link img{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    padding: 10px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.footwear-link img{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    padding: 10px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.5;
 }
 
 .accessories {
@@ -326,3 +367,4 @@ h1.homepage-title {
 .footwear {
     
 }
+
