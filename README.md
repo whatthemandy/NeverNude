@@ -3,13 +3,13 @@ NeverNude is a virtual closet app that allows users to put together their outfit
 
 
 ## Team NeverNude
-Danny Pham
+Danny Pham (dannynpham)
 
-Jesse Kinser
+Jesse Kinser (jdkinser)
 
-Maeve Tierney
+Maeve Tierney (maevetierney)
 
-Mandy McDorman
+Mandy McDorman (whatthemandy)
 
 
 ## Link to back-end:
