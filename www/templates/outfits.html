@@ -9,19 +9,13 @@
     
 </ion-header-bar>
 <ion-content class='has-footer'>
-<div class="">
+<div class="fulloutfits-container">
 	<div class="outfits" ng-controller="OutfitsController">
 		
-		<div class='outfits-container'>
-			<!-- <ion-slide-box>
-				<ion-slide ng-repeat="stuff in outfits_items" ng-init="updateSlider()">
-					<p ng-repeat="things in stuff">{{ things.item_id }}"</p>
-				</ion-slide>
-			</ion-slide-box> -->
-
+		<div class='outfit-photo-container'>
 			<ion-slide-box>
 				<ion-slide ng-repeat="picture in pictures" ng-init="updateSlider()">
-					<img class='' ng-repeat="photo in picture" ng-src="{{ photo.image_urls }}">
+					<img class='outfits-photo' ng-repeat="photo in picture" ng-src="{{ photo }}">
 				</ion-slide>
 			</ion-slide-box>
 
@@ -33,9 +27,9 @@
 
 </ion-content>
 
-<!-- <ion-footer-bar class='bar-dark'>
+<ion-footer-bar class='bar-dark'>
 	<div class="footer-container">
-		<h1 class="save-outfit-btn">Save <i class="icon ion-ios-heart-outline"></i> Outfit</h1>
+		<h1 class="save-outfit-btn"></h1>
 	</div>	
 
-</ion-footer-bar> -->
+</ion-footer-bar>
