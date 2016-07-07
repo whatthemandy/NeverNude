@@ -28,7 +28,7 @@ var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova']
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('home', {url: '/home', templateUrl: 'templates/home.html'})
+    .state('home', {url: '/home', templateUrl: 'templates/home.html', controller: 'MenuController'})
     .state('login', {url: '/login', templateUrl: 'templates/login.html'})//CHANGED TO CAMERA TO TEST FUNCTIONALITY
     // .state('menu', {url: '/menu', abstract:true, templateUrl: 'templates/menu.html', controller: 'MenuController'})
     .state('registration', {url: '/registration', templateUrl: 'templates/registration.html'})
