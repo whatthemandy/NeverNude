@@ -38,6 +38,7 @@ neverNude.controller('UserController', ['$http', '$scope', 'authentication', fun
     if($scope.email && $scope.password) {
       authentication.authenticate($scope.email, $scope.password)
         .then(function(response){
+          console.log(response);
           storeSession(response, response.data.data);
         });
     }

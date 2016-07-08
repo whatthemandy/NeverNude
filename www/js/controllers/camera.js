@@ -1,4 +1,4 @@
-neverNude.controller('CameraController', function($scope, $cordovaCamera, $http) {
+neverNude.controller('CameraController', function($scope, $cordovaCamera, $http, $jrCrop) {
 
   $scope.takePicture = function() {
     var options = {
@@ -11,15 +11,29 @@ neverNude.controller('CameraController', function($scope, $cordovaCamera, $http)
       targetHeight: 300,
       popoverOptions: CameraPopoverOptions,
       saveToPhotoAlbum: false,
-    correctOrientation:true
+      correctOrientation:true
     };
 
 
 
     $cordovaCamera.getPicture(options).then(function(imageData) {
-      var image = document.getElementById('myImage');
-      image.src = "data:image/jpeg;base64," + imageData;
-      item = JSON.stringify({item: {user_id: '1', section_id: '2', image: imageData}})
+      // var image = document.getElementById('myImage');
+      // image.src = "data:image/jpeg;base64," + imageData;
+
+      $jrCrop.crop({
+        url: imageData,
+        width: 400,
+        height: 300
+      }).then(function(canvas) {
+        alert('woooo');
+        image = canvas.toDataURL();
+      }, function() {
+        alert('booo');
+      });
+
+      crop(imageData);
+
+      item = JSON.stringify({item: {user_id: '1', section_id: '2', image: image}})
 
       $http.post('https://nevernude.herokuapp.com/sections/2/items', item, {
         headers: {'Content-Type': 'application/json'}

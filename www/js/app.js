@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 
 var rootUrl = 'https://nevernude.herokuapp.com'
-var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova'])
+var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova', 'jrCrop'])
 
 
 .run(function($ionicPlatform) {
