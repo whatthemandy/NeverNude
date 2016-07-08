@@ -20,7 +20,7 @@ function setHeader() {
   };
 };
 
-neverNude.controller('UserController', ['$http', '$scope', 'authentication', function($http, $scope, authentication) {
+neverNude.controller('UserController', ['$http', '$scope', 'authentication', '$state', function($http, $scope, authentication, $state) {
 
   function storeSession(response, setUser) {
     window.sessionStorage.token = response.headers('access-token');
@@ -38,8 +38,8 @@ neverNude.controller('UserController', ['$http', '$scope', 'authentication', fun
     if($scope.email && $scope.password) {
       authentication.authenticate($scope.email, $scope.password)
         .then(function(response){
-          console.log(response);
           storeSession(response, response.data.data);
+          $state.go('home');
         });
     }
     else {
@@ -51,6 +51,7 @@ neverNude.controller('UserController', ['$http', '$scope', 'authentication', fun
     if($scope.password === $scope.passwordConfirm) {
       register = JSON.stringify({email: $scope.email, password: $scope.password, first_name: $scope.firstName, last_name: $scope.lastName, nickname: $scope.nickname});
       $http.post(rootUrl + '/v1/auth/register', register);
+      $state.go('home');
     } else {
       $scope.password = "";
       $scope.passwordConfirm = "";

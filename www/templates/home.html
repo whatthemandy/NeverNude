@@ -57,21 +57,15 @@
 				<img src="img/shoe-icon1.png">
 			</a>
 		</div>
-
-	<!-- <button ng-click="saveOutfit()" style="padding:40px;">CLICK </button> -->
-
-
 	</div>
 </div>
-<!-- <ion-spinner icon="ripple"></ion-spinner> -->
 
 </ion-content>
 
 <ion-footer-bar class='bar-dark'>
-	<div class="save-outfit-container">
-		<!-- <h1 class="save-outfit-btn">Save Outfit</h1> -->
-		<a class='save-outfit-btn'href="#/outfits">
-			Save Outfit <i class="icon ion-ios-heart-outline"></i>
+	<div class="save-outfit-container" ng-controller="SectionsItemsController">
+		<a class='save-outfit-btn'>
+			Save Outfit <i class="icon ion-ios-heart-outline" ng-click="saveOutfit()"></i>
 		</a>
 	</div>
 </ion-footer-bar>
@@ -85,16 +79,16 @@
     <ion-content>
       <ion-list>
         <ion-item menu-close href="#/outfits">
-          	Outfits
+          Outfits
         </ion-item>
-        <ion-item menu-close href="#/profile">
-          	Profile
+        <ion-item menu-close href="#/home">
+          Profile
         </ion-item>
-        <ion-item menu-close href="#/devs">
-        	Devs
+        <ion-item menu-close href="#/home">
+          Filters
         </ion-item>
-        <ion-item menu-close href="#/login">
-          	Logout
+        <ion-item menu-close href="#/home">
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>
