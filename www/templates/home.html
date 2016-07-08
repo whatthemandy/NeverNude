@@ -5,9 +5,14 @@
 	<div class="title-container">
 		<h1 class="homepage-title">Wardrobe</h1>
 	</div>
-    <button class="dropdown-menu-button" ng-click="toggleLeft()">
+
+	<a class='dropdown-menu-button' ng-click="toggleLeft()">
+		<i class="icon ion-navicon"></i>
+	</a>
+
+    <!-- <button class="dropdown-menu-button" ng-click="toggleLeft()">
     	<i class="icon ion-navicon"></i>
-    </button>
+    </button> -->
 
 </ion-header-bar>
 <ion-content class='has-footer'>
@@ -36,7 +41,9 @@
 			</a>
 		</div>
 
-		<div class='photo-container bottoms'>
+    <!-- <ion-spinner icon="bubbles" id="loading"></ion-spinner> -->
+
+    <div class='photo-container bottoms'>
 			<ion-slide-box delegate-handle="bottoms">
 				<ion-slide ng-repeat="bottomsPicture in bottomsPictures" ng-init="updateSlider()">
 					<img class='photos' ng-src="{{ bottomsPicture }}">
@@ -63,9 +70,10 @@
 </ion-content>
 
 <ion-footer-bar class='bar-dark'>
+
 	<div class="save-outfit-container" ng-controller="SectionsItemsController">
-		<a class='save-outfit-btn'>
-			Save Outfit <i class="icon ion-ios-heart-outline" ng-click="saveOutfit()"></i>
+		<a class='save-outfit-btn' ng-click="saveOutfit()">
+			<i class="icon ion-android-favorite"></i> Save Outfit <i class="icon ion-android-favorite"></i>
 		</a>
 	</div>
 </ion-footer-bar>
