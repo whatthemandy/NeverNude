@@ -37,6 +37,14 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
     $scope.footTags = data.tags;
   });
 
+  $scope.randomizer = function() {
+    // alert(accessories.length);
+    $ionicSlideBoxDelegate.$getByHandle('accer').slide(Math.floor(Math.random() * accessories.length));
+    $ionicSlideBoxDelegate.$getByHandle('tops').slide(Math.floor(Math.random() * tops.length));
+    $ionicSlideBoxDelegate.$getByHandle('bottoms').slide(Math.floor(Math.random() * bottoms.length));
+    $ionicSlideBoxDelegate.$getByHandle('footwear').slide(Math.floor(Math.random() * foot.length));
+  };
+
   $scope.saveOutfit = function() {
     var accerId = accessories[$ionicSlideBoxDelegate.$getByHandle('accer').currentIndex()].id;
     var topsId = tops[$ionicSlideBoxDelegate.$getByHandle('tops').currentIndex()].id;
