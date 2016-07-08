@@ -10,6 +10,7 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
     $scope.accerPictures = data.med_image_urls;
     $scope.accerLrgPictures = data.lrg_image_urls;
     accessories = data.items;
+    $scope.accerTags = data.tags;
   });
 
   sectionsitems.get({ id: 2 }, function(data) {
@@ -17,6 +18,7 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
     $scope.topsPictures = data.med_image_urls;
     $scope.topsLrgPictures = data.lrg_image_urls;
     tops = data.items;
+    $scope.topsTags = data.tags;
   });
 
   sectionsitems.get({ id: 3 }, function(data) {
@@ -24,6 +26,7 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
     $scope.bottomsPictures = data.med_image_urls;
     $scope.bottomsLrgPictures = data.lrg_image_urls;
     bottoms = data.items;
+    $scope.bottomsTags = data.tags;
   });
 
   sectionsitems.get({ id: 4 }, function(data) {
@@ -31,6 +34,7 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
     $scope.footPictures = data.med_image_urls;
     $scope.footLrgPictures = data.lrg_image_urls;
     foot = data.items;
+    $scope.footTags = data.tags;
   });
 
   $scope.saveOutfit = function() {
@@ -45,6 +49,7 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
       headers: {'Content-Type': 'application/json'}
     })
     .success(function(data) {
+      $ionicLoading.hide();
       $state.go('outfits');
       alert('Outfit saved.');
     })
