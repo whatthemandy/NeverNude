@@ -15,18 +15,17 @@
                 <a class='tops-link'href="#/login"><div class="arrow-button"></div></a>
             </div>
             <div class="register-form-container">
-                <form id="register-form" method="" action="">
-
-                    <input id="nickname" class="register-form-fields" type="text" name="" value="" placeholder="Nickname" >
-                    <input id="first-name" class="register-form-fields" type="text" name="" value="" placeholder="First Name" >
-                    <input id="last-name" class="register-form-fields" type="text" name="" value="" placeholder="Last Name" >
-                    <input id="e-mail" class="register-form-fields" type="text" name="" value="" placeholder="Email" >
-                    <input id="new-password" class="register-form-fields" type="password" name="" value="" placeholder="Password" >
-                    <input id="registerbtn" class="form-button" type="submit" value="REGISTER">
-                </form>
-
-                
-               
+                <div ng-controller="UserController">
+                    <form id="register-form" method="" action="">
+                        <input id="nickname" class="register-form-fields" type="text" placeholder="Nickname" ng-model="nickname" autofocus>
+                        <input id="first-name" class="register-form-fields" type="text" placeholder="First Name" ng-model="firstName">
+                        <input id="last-name" class="register-form-fields" type="text" placeholder="Last Name" ng-model="lastName">
+                        <input id="e-mail" class="register-form-fields" type="text" placeholder="Email" ng-model="email">
+                        <input id="new-password" class="register-form-fields" type="password" placeholder="Password" ng-model="password">
+                        <input id="confirm-password" class="register-form-fields" type="password" placeholder="Confirm Password" ng-model="passwordConfirm">
+                        <input id="registerbtn" class="form-button" type="submit" value="REGISTER" ng-click="register()">
+                    </form>
+                </div>
             </div>
         </div>
   </ion-content>

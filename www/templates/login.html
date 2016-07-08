@@ -7,21 +7,20 @@
     <div class="slogan">
         <p class="slogan-text">A Pocket Wardrobe</p>
     </div>
-        <div class="login-form-container">
+    <div class="login-form-container">
+        <div ng-controller="UserController">
             <form id="login" method="" action="">
-                <input id="email" class="email-input" type="email" name="" value="" placeholder="Email" >
-                <input id="password" class="password-input" type="password" name="" value="" placeholder="Password" >
-                <input id="btnsignin" class="form-button" type="submit" value="SIGN IN">
+                <input id="email" class="email-input" type="email" ng-model="email" placeholder="Email" >
+                <input id="password" class="password-input" type="password" ng-model="password" placeholder="Password" >
+                <input id="btnsignin" class="form-button" type="submit" value="SIGN IN" ng-click="login()">
             </form>
 
             <a class='bypass-link'href="#/home">
                 testing bypass login
             </a>
 
-            <!-- <button class="button button-full button-positive" type="submit">
-                    Sign In
-           </button> -->
         </div>
+    </div>
         <div class="register">
             <div class="signup">
               <a class='signup-link'href="#/registration">REGISTER</a>

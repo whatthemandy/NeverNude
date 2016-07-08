@@ -7,18 +7,18 @@
 
   <a class='accessories-back-btn'href="#/home">
     <i class="ion-ios-arrow-left"></i>
-  </a> 
+  </a>
 
   </ion-header-bar>
-  
+
 
     <div class="sectionsitems" ng-controller="SectionsItemsController">
-    
+
     <div class='accessories-photo-container'>
       <ion-slide-box>
         <ion-slide ng-repeat="bottomsLrgPicture in bottomsLrgPictures" ng-init="updateSlider()">
           <img class='accessories-photo' ng-src="{{ bottomsLrgPicture }}">
-        </ion-slide>  
+        </ion-slide>
       </ion-slide-box>
     </div>
 
@@ -33,17 +33,16 @@
       </div>
     </div>
 
-    
-
 </ion-pane>
 
-<ion-footer-bar class='bar-dark'>
+<ion-footer-bar class='bar-dark' ng-controller="CameraController">
   <div class="footer-container">
-    <a class='camera-btn-container'href="#/home">
+    <a class='camera-btn-container'>
       <div class='camera-btn'>
-        <i class="icon ion-ios-camera"></i>
-      </div>   
+        <i class="icon ion-ios-camera" ng-click="takePicture()"></i>
+      </div>
     </a>
-  </div>  
+  </div>
 
 </ion-footer-bar>
+
