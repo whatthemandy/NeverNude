@@ -599,3 +599,18 @@ h1.homepage-title {
     background-color: yellow;
     text-align: center;
     }
+
+.randombtn {
+    font-size: 34px;
+    color: black;
+    margin-right: 10px;
+}
+
+.buttonfix {
+    text-decoration: none;
+    text-align: center;
+}
+
+.tagsfix {
+    font-weight: bold;
+}

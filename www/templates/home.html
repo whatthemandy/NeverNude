@@ -10,14 +10,21 @@
 		<i class="icon ion-navicon"></i>
 	</a>
 
+
     <!-- <button class="dropdown-menu-button" ng-click="toggleLeft()">
     	<i class="icon ion-navicon"></i>
     </button> -->
 
 </ion-header-bar>
 <ion-content class='has-footer'>
+    <div ng-controller="SectionsItemsController" style="float:right;">
+	    <a class='randombtn' ng-click="randomizer()">
+		  <i class="icon ion-loop"></i>
+		</a>
+	</div>
 <div class="closet-slider-container">
 	<div class="sectionsitems" ng-controller="SectionsItemsController">
+
 
 		<div class='photo-container accessories'>
 			<ion-slide-box delegate-handle="accer" ng-click="index()">
@@ -89,12 +96,12 @@
         <ion-item menu-close href="#/outfits">
           Outfits
         </ion-item>
-        <ion-item menu-close href="#/profile">
+        <!-- <ion-item menu-close href="#/profile">
           Profile
         </ion-item>
         <ion-item menu-close href="#/devs">
           Developers
-        </ion-item>
+        </ion-item> -->
         <ion-item menu-close href="#/login">
           Logout
         </ion-item>

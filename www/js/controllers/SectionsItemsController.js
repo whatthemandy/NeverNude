@@ -1,5 +1,6 @@
 neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelegate', 'sectionsitems', '$http', '$state', function($scope, $ionicSlideBoxDelegate, sectionsitems, $http, $state) {
 
+
   $scope.updateSlider = function () {
     $ionicSlideBoxDelegate.update();
     $ionicSlideBoxDelegate.loop(true);
@@ -57,9 +58,8 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
       headers: {'Content-Type': 'application/json'}
     })
     .success(function(data) {
-      $ionicLoading.hide();
-      $state.go('outfits');
       alert('Outfit saved.');
+      $state.go('outfits', {}, {reload: true});
     })
-  };
+  };  
 }]);
