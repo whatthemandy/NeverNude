@@ -28,13 +28,17 @@ var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova']
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('home', {url: '/home', templateUrl: 'templates/home.html'})
-    .state('login', {url: '/login', templateUrl: 'templates/login.html'})//CHANGED TO CAMERA TO TEST FUNCTIONALITY
+    .state('home', {url: '/home', templateUrl: 'templates/home.html', controller: 'MenuController'})
+    .state('login', {url: '/login', templateUrl: 'templates/login.html'})
     .state('registration', {url: '/registration', templateUrl: 'templates/registration.html'})
     .state('accessories', {url: '/accessories', templateUrl: 'templates/accessories.html'})
-    .state('tops', {url: '/tops', templateUrl: 'templates/tops.html'})
+    .state('tops', {cache: false, url: '/tops', templateUrl: 'templates/tops.html'})
     .state('bottoms', {url: '/bottoms', templateUrl: 'templates/bottoms.html'})
-    .state('footwear', {url: '/footwear', templateUrl: 'templates/footwear.html'});
+    .state('outfits', {cache: false, url: '/outfits', templateUrl: 'templates/outfits.html'})
+    .state('footwear', {url: '/footwear', templateUrl: 'templates/footwear.html'})
+    .state('devs', {url: '/devs', templateUrl: 'templates/devs.html'})
+    .state('photoedit', {url: '/photoedit', templateUrl: 'templates/photoedit.html'})
+    .state('profile', {url: '/profile', templateUrl: 'templates/profile.html'});
   $urlRouterProvider.otherwise('/login');
 });
 

@@ -1,1 +1,29 @@
-<!-- outfits -->
+<ion-header-bar class='bar-dark home-nav-bar'>
+
+	<div class="title-container">
+		<h1 class="homepage-title">Outfits</h1>
+	</div>
+
+    <a class='accessories-back-btn'href="#/home">
+    	<i class="ion-ios-arrow-left"></i>
+  	</a> 
+    
+</ion-header-bar>
+
+<ion-content ng-controller="SectionsItemsController">
+<div class="full-outfits-container">
+	<div class="outfits" ng-controller="OutfitsController">
+		
+		<div class='outfit-photo-container'>
+			<ion-slide-box>
+				<ion-slide ng-repeat="picture in pictures" ng-init="updateSlider()">
+					<img class='outfits-photo' ng-repeat="photo in picture" ng-src="{{ photo }}">
+				</ion-slide>
+			</ion-slide-box>
+
+		</div>
+
+	</div>
+</div>
+
+</ion-content>

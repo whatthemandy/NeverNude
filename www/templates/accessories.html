@@ -4,21 +4,21 @@
   <div class="title-container">
     <h1 class="homepage-title">Accessories</h1>
   </div>
-  <button class="dropdown-menu-button" ng-click="doSomething()">
-    <i class="icon ion-navicon"></i>
-  </button>
 
+  <a class='accessories-back-btn'href="#/home">
+    <i class="ion-ios-arrow-left"></i>
+  </a>
 
   </ion-header-bar>
-  
+
 
     <div class="sectionsitems" ng-controller="SectionsItemsController">
-    
+
     <div class='accessories-photo-container'>
       <ion-slide-box>
         <ion-slide ng-repeat="accerLrgPicture in accerLrgPictures" ng-init="updateSlider()">
           <img class='accessories-photo' ng-src="{{ accerLrgPicture }}">
-        </ion-slide>  
+        </ion-slide>
       </ion-slide-box>
     </div>
 
@@ -27,27 +27,22 @@
     <!-- (all) tags -->
     <div class="tag-container">
       <div class="tags" ng-controller="TagsController">
-        <div ng-repeat="tag in tags">
-          <p>{{ tag.name }}</p>
+        <!-- <div ng-repeat="tag in tags"> -->
+        <div>
+          <p class="tagsfix"> Tags </p>
         </div>
       </div>
     </div>
 
-    
-
 </ion-pane>
 
 <ion-footer-bar class='bar-dark'>
-  <div class="footer-container">
-    <a class='camera-btn-container'href="#/home">
+  <div class="footer-container" ng-controller="CameraController">
+    <a class='camera-btn-container'>
       <div class='camera-btn'>
-        <i class="icon ion-ios-camera"></i>
-      </div>   
+        <i class="icon ion-ios-camera" ng-click="takePicture()"></i>
+      </div>
     </a>
-  </div>  
-
-  <a class='accessories-back-btn'href="#/home">
-    <i class="icon ion-android-arrow-dropleft-circle"></i>
-  </a> 
+  </div>
 
 </ion-footer-bar>

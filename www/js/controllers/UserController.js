@@ -20,7 +20,14 @@ function setHeader() {
   };
 };
 
-neverNude.controller('UserController', ['$http', '$scope', 'authentication', function($http, $scope, authentication) {
+neverNude.controller('UserController', ['$http', '$scope', 'authentication', '$state', '$ionicPopup', function($http, $scope, authentication, $state, $ionicPopup) {
+
+  showAlert = function(alert) {
+    var alertPopup = $ionicPopup.alert({
+      title: alert,
+      cssClass: 'popupstyle'
+    });
+  };
 
   function storeSession(response, setUser) {
     window.sessionStorage.token = response.headers('access-token');
@@ -37,12 +44,16 @@ neverNude.controller('UserController', ['$http', '$scope', 'authentication', fun
   $scope.login = function() {
     if($scope.email && $scope.password) {
       authentication.authenticate($scope.email, $scope.password)
-        .then(function(response){
+        .then(function(response) {
           storeSession(response, response.data.data);
+          $state.go('home');
+        })
+        .catch(function(data) {
+          showAlert(data.data.errors[0]);
         });
     }
     else {
-      alert("Invalid Login");
+      showAlert("Invalid Login");
     }
   };
 
@@ -50,10 +61,11 @@ neverNude.controller('UserController', ['$http', '$scope', 'authentication', fun
     if($scope.password === $scope.passwordConfirm) {
       register = JSON.stringify({email: $scope.email, password: $scope.password, first_name: $scope.firstName, last_name: $scope.lastName, nickname: $scope.nickname});
       $http.post(rootUrl + '/v1/auth/register', register);
+      $state.go('home');
     } else {
       $scope.password = "";
       $scope.passwordConfirm = "";
-      alert("Passwords did not match.");
+      showAlert("Passwords did not match.");
     };
   };
 
