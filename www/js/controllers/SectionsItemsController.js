@@ -1,5 +1,11 @@
-neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelegate', 'sectionsitems', '$http', '$state', function($scope, $ionicSlideBoxDelegate, sectionsitems, $http, $state) {
+neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelegate', 'sectionsitems', '$http', '$state', '$ionicPopup', function($scope, $ionicSlideBoxDelegate, sectionsitems, $http, $state, $ionicPopup) {
 
+  showAlert = function(alert) {
+    var alertPopup = $ionicPopup.alert({
+      title: alert,
+      cssClass: 'popupstyle'
+    });
+  };
 
   $scope.updateSlider = function () {
     $ionicSlideBoxDelegate.update();
@@ -7,6 +13,9 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
   };
 
   sectionsitems.get({ id: 1 }, function(data) {
+    $scope.onHoldAccer = function() {
+      $state.go('accessories');
+    }
     $scope.items = data.items;
     $scope.accerPictures = data.med_image_urls;
     $scope.accerLrgPictures = data.lrg_image_urls;
@@ -15,6 +24,9 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
   });
 
   sectionsitems.get({ id: 2 }, function(data) {
+    $scope.onHoldTops = function() {
+      $state.go('tops');
+    }
     $scope.items = data.items;
     $scope.topsPictures = data.med_image_urls;
     $scope.topsLrgPictures = data.lrg_image_urls;
@@ -23,6 +35,9 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
   });
 
   sectionsitems.get({ id: 3 }, function(data) {
+    $scope.onHoldBottoms = function() {
+      $state.go('bottoms');
+    }
     $scope.items = data.items;
     $scope.bottomsPictures = data.med_image_urls;
     $scope.bottomsLrgPictures = data.lrg_image_urls;
@@ -31,6 +46,9 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
   });
 
   sectionsitems.get({ id: 4 }, function(data) {
+    $scope.onHoldFoot = function() {
+      $state.go('footwear');
+    }
     $scope.items = data.items;
     $scope.footPictures = data.med_image_urls;
     $scope.footLrgPictures = data.lrg_image_urls;
@@ -54,12 +72,15 @@ neverNude.controller('SectionsItemsController', ['$scope', '$ionicSlideBoxDelega
 
     outfit = JSON.stringify({outfit: {user_id: 1, accer_id: accerId, tops_id: topsId, bottoms_id: bottomsId, foot_id: footId}})
 
-    $http.post('https://nevernude.herokuapp.com/outfits', outfit, {
+    $http.post(rootUrl + '/outfits', outfit, {
       headers: {'Content-Type': 'application/json'}
     })
     .success(function(data) {
-      alert('Outfit saved.');
-      $state.go('outfits', {}, {reload: true});
+      $state.go('outfits');
+      showAlert('Outfit saved.');
     })
-  };  
+    .error(function() {
+      showAlert('There was an error. Please try again.')
+    })
+  };
 }]);

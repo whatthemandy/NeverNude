@@ -1,6 +1,30 @@
-neverNude.controller('CameraController', function($scope, $cordovaCamera, $http, $state, $jrCrop) {
+neverNude.controller('CameraController', function($scope, $http, $state, $ionicPopup, $cordovaCamera) {
+
+  showAlert = function(alert) {
+    var alertPopup = $ionicPopup.alert({
+      title: alert,
+      cssClass: 'popupstyle'
+    });
+  };
+
+  var sectionId = 0;
+  switch ($state.current.name) {
+    case "accessories":
+      sectionId = '1';
+      break;
+    case "tops":
+      sectionId = '2';
+      break;
+    case "bottoms":
+      sectionId = '3';
+      break;
+    case "footwear":
+      sectionId = '4';
+      break;
+  };
 
   $scope.takePicture = function() {
+
     var options = {
       quality: 80,
       destinationType: Camera.DestinationType.DATA_URL,
@@ -14,37 +38,16 @@ neverNude.controller('CameraController', function($scope, $cordovaCamera, $http,
 
     $cordovaCamera.getPicture(options).then(function(imageData) {
 
+      item = JSON.stringify({item: {user_id: '1', section_id: sectionId, image: imageData}})
 
-      item = JSON.stringify({item: {user_id: '1', section_id: '2', image: imageData}})
-
-      $http.post('https://nevernude.herokuapp.com/sections/2/items', item, {
+      $http.post(rootUrl + '/sections/2/items', item, {
         headers: {'Content-Type': 'application/json'}
       })
       .success(function(data) {
         window.location.reload(true);
-        alert('Image was successfully uploaded.');
+        showAlert('Image was successfully uploaded.');
       })
-
-      // $jrCrop.crop({
-      //   url: "data:image/jpeg;base64," + imageData,
-      //   width: 300,
-      //   height: 225,
-      //   title: 'Move and Scale.'
-      // }).then(function(image) {
-      //   alert('woooo');
-      //   item = JSON.stringify({item: {user_id: '1', section_id: '2', image: image}})
-
-      //   $http.post('https://nevernude.herokuapp.com/sections/2/items', item, {
-      //     headers: {'Content-Type': 'application/json'}
-      //   })
-      //   .success(function(data) {
-      //     alert('Image was successfully uploaded.');
-      //   })
-      // }, function() {
-      //   alert('booo');
-      // });
-
-
     });
+
   };
 });
