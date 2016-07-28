@@ -40,7 +40,7 @@ neverNude.controller('CameraController', function($scope, $http, $state, $ionicP
 
       item = JSON.stringify({item: {user_id: '1', section_id: sectionId, image: imageData}})
 
-      $http.post(rootUrl + '/sections/2/items', item, {
+      $http.post(rootUrl + '/sections/' + sectionId + '/items', item, {
         headers: {'Content-Type': 'application/json'}
       })
       .success(function(data) {

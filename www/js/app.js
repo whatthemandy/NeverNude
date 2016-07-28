@@ -4,8 +4,8 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-var rootUrl = 'https://nevernude.herokuapp.com'
-var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova'])
+var rootUrl = 'https://never-nude.herokuapp.com'
+var neverNude = angular.module('neverNude', ['ionic','ionic.service.core', 'ngResource', 'ngCordova'])
 
 
 .run(function($ionicPlatform) {
@@ -36,7 +36,6 @@ var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova']
     .state('bottoms', {url: '/bottoms', templateUrl: 'templates/bottoms.html'})
     .state('outfits', {cache: false, url: '/outfits', templateUrl: 'templates/outfits.html'})
     .state('footwear', {url: '/footwear', templateUrl: 'templates/footwear.html'})
-    .state('devs', {url: '/devs', templateUrl: 'templates/devs.html'})
     .state('photoedit', {url: '/photoedit', templateUrl: 'templates/photoedit.html'})
     .state('profile', {url: '/profile', templateUrl: 'templates/profile.html'});
   $urlRouterProvider.otherwise('/login');
