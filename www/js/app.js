@@ -36,7 +36,6 @@ var neverNude = angular.module('neverNude', ['ionic','ionic.service.core', 'ngRe
     .state('bottoms', {url: '/bottoms', templateUrl: 'templates/bottoms.html'})
     .state('outfits', {cache: false, url: '/outfits', templateUrl: 'templates/outfits.html'})
     .state('footwear', {url: '/footwear', templateUrl: 'templates/footwear.html'})
-    .state('devs', {url: '/devs', templateUrl: 'templates/devs.html'})
     .state('photoedit', {url: '/photoedit', templateUrl: 'templates/photoedit.html'})
     .state('profile', {url: '/profile', templateUrl: 'templates/profile.html'});
   $urlRouterProvider.otherwise('/login');
