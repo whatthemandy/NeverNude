@@ -4,8 +4,8 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-var rootUrl = 'https://nevernude.herokuapp.com'
-var neverNude = angular.module('neverNude', ['ionic', 'ngResource', 'ngCordova'])
+var rootUrl = 'https://never-nude.herokuapp.com'
+var neverNude = angular.module('neverNude', ['ionic','ionic.service.core', 'ngResource', 'ngCordova'])
 
 
 .run(function($ionicPlatform) {
