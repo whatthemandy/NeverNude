@@ -428,6 +428,12 @@ h1.homepage-title {
 
 }
 
+.randombtn {
+    font-size: 35px;
+    color: black;
+    margin-right: 15px;
+}
+
 /*-------------------------------------------------*/
 /*----------------accessories page-----------------*/
 /*-------------------------------------------------*/
@@ -640,10 +646,11 @@ h1.homepage-title {
 
 #account-page {
     text-align: center;
-    margin-top: -200px;
+    margin-top: 50px;
+    padding-top: 10px;
+    font-size: 1.5em;
 }
 
-.account-details {
-    padding-top: 10px;
-    font-size: 1.25em;
+.account-page-header {
+    margin-top: 30px;
 }
